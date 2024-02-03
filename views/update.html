@@ -19,37 +19,27 @@
 
 
 <div class="container my-5">
-    <div class="d-flex justify-content-between">
-        <h3>List Employee</h3>
-        <a href="/employee/create" class="btn btn-primary">Tambah Data</a>
+    <div class="d-flex justify-content-between mb-4">
+        <h3>Form Edit Karyawan</h3>
     </div>
 
+    <form action="/employee/update?id={{.employee.Id}}" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nama Karyawan</label>
+            <input type="text" id="name" name="name" class="form-control" value="{{.employee.Name}}">
+        </div>
+        <div class="mb-3">
+            <label for="npwp" class="form-label">NPWP</label>
+            <input type="text" id="npwp" name="npwp" class="form-control" value="{{.employee.NPWP}}">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <textarea id="address" name="address" class="form-control">{{.employee.Address}}</textarea>
 
-    <table class="table my-5">
-        <thead>
-        <tr>
-            <td>Nama</td>
-            <td>NPWP</td>
-            <td>Alamat</td>
-        </tr>
-        </thead>
-        <tbody>
-        {{range $index, $employee := .employees}}
-        <tr>
-            <td>{{$employee.Name}}</td>
-            <td>{{$employee.NPWP}}</td>
-            <td>{{$employee.Address}}</td>
-            <td>
-                <a href="/employee/update?id={{$employee.Id}}" class="btn btn-warning btn-sm">Edit</a>
-            </td>
-        </tr>
-        {{end}}
-        </tbody>
-    </table>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm"><Edit></Edit></button>
+    </form>
 </div>
-
-
-
 
 <!-- Optional JavaScript; choose one of the two! -->
 
