@@ -23,7 +23,30 @@
         <h3>List Employee</h3>
         <a href="/employee/create" class="btn btn-primary">Tambah Data</a>
     </div>
+
+
+    <table class="table my-5">
+        <thead>
+        <tr>
+            <td>Nama</td>
+            <td>NPWP</td>
+            <td>Alamat</td>
+        </tr>
+        </thead>
+        <tbody>
+        {{range $index, $employee := .employees}}
+        <tr>
+            <td>{{$employee.Name}}</td>
+            <td>{{$employee.NPWP}}</td>
+            <td>{{$employee.Address}}</td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
 </div>
+
+
+
 
 <!-- Optional JavaScript; choose one of the two! -->
 

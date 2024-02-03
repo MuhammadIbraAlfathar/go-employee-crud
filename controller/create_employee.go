@@ -26,6 +26,8 @@ func NewCreateEmployeeController(db *sql.DB) func(writer http.ResponseWriter, re
 				return
 			}
 
+			http.Redirect(writer, request, "/employee", http.StatusMovedPermanently)
+
 		} else if request.Method == "GET" {
 			fp := filepath.Join("views", "create.html")
 			files, err := template.ParseFiles(fp)

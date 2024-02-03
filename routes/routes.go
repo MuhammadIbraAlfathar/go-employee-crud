@@ -8,6 +8,6 @@ import (
 
 func MapRoutes(server *http.ServeMux, db *sql.DB) {
 	server.HandleFunc("/", controller.HelloWorldController())
-	server.HandleFunc("/employee", controller.NewIndexController())
+	server.HandleFunc("/employee", controller.NewIndexController(db))
 	server.HandleFunc("/employee/create", controller.NewCreateEmployeeController(db))
 }
