@@ -19,9 +19,26 @@
 
 
 <div class="container my-5">
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between mb-4">
         <h3>Form Karyawan</h3>
     </div>
+
+    <form action="/employee/create" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nama Karyawan</label>
+            <input type="text" id="name" name="name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="npwp" class="form-label">NPWP</label>
+            <input type="text" id="npwp" name="npwp" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <textarea id="address" name="address" class="form-control">
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Tambah</button>
+    </form>
 </div>
 
 <!-- Optional JavaScript; choose one of the two! -->
