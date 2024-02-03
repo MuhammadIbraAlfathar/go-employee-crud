@@ -7,11 +7,11 @@ import (
 )
 
 func main() {
-	database.InitDatabase()
+	db := database.InitDatabase()
 
 	server := http.NewServeMux()
 
-	routes.MapRoutes(server)
+	routes.MapRoutes(server, db)
 
 	err := http.ListenAndServe("localhost:8080", server)
 
