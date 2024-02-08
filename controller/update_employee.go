@@ -16,6 +16,8 @@ func NewUpdateEmployeeController(db *sql.DB) func(writer http.ResponseWriter, re
 
 			id := request.URL.Query().Get("id")
 
+			//test
+
 			_ = request.ParseForm()
 
 			name := request.Form["name"][0]
